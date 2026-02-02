@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Valentine ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background: white;
+    width: 95%;
+    max-width: 580px;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+
+  h1 { color: #e63946; }
+
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  .question { display: none; }
+  .question.active { display: block; }
+
+  label {
+    display: block;
+    margin: 10px 0;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 14px 26px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: #e63946;
+    color: white;
+  }
+
+  .valentine-box {
+    position: relative;
+    height: 120px;
+  }
+
+  .no {
+    position: absolute;
+    background: #ccc;
+    color: black;
+  }
+
+  .love-letter {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- 🌸 START -->
+<div class="screen active" id="startScreen">
+  <h1>Hi My Love ❤️</h1>
+  <p>
+    This little game is about us —<br>
+    the love, the laughter, the fights,<br>
+    and everything in between 💕
+  </p>
+  <button onclick="startGame()">Start 💖</button>
+</div>
+
+<!-- 🎮 GAME -->
+<div class="screen" id="gameScreen">
+
+<!-- Q1 Romantic -->
+<div class="question active">
+  <p>When you think of me, what comes first?</p>
+  <label><input type="radio"> Love ❤️</label>
+  <label><input type="radio"> Comfort 🤍</label>
+  <label><input type="radio"> Peace 😌</label>
+<label><input type="radio"> Food </label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q2 Playful -->
+<div class="question">
+  <p>If we argue, how long does your anger last?</p>
+  <label><input type="radio"> few minutes 😠</label>
+  <label><input type="radio"> few hours </label>
+  <label><input type="radio"> until I say sorry 😄</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q3 Emotional -->
+<div class="question">
+  <p>Distance sometimes makes you feel…</p>
+  <label><input type="radio"> Lonely 💔</label>
+  <label><input type="radio"> Frustrated 😤</label>
+  <label><input type="radio"> More sure about us 💪</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q4 Do you know me -->
+<div class="question">
+  <p>When I say “I’m fine”, I usually want…</p>
+  <label><input type="radio"> Space 😶</label>
+  <label><input type="radio"> Hugs 🤗</label>
+  <label><input type="radio"> You ❤️</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q5 Romantic -->
+<div class="question">
+  <p>What makes me feel most loved?</p>
+  <label><input type="radio"> Your time ⏳</label>
+  <label><input type="radio"> Your words 💬</label>
+  <label><input type="radio"> Your effort ❤️</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q6 Playful -->
+<div class="question">
+  <p>Who usually says sorry first?</p>
+  <label><input type="radio"> You 😇</label>
+  <label><input type="radio"> Me 🙃</label>
+  <label><input type="radio"> Whoever misses more 😄</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q7 Emotional -->
+<div class="question">
+  <p>What hurts the most when we’re apart?</p>
+  <label><input type="radio"> Missing daily moments ☕</label>
+  <label><input type="radio"> Not being able to hug 🤗</label>
+  <label><input type="radio"> Seeing me manage alone 💔</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q8 Do you know me -->
+<div class="question">
+  <p>When I’m stressed, what helps me most?</p>
+  <label><input type="radio"> Silence 😶</label>
+  <label><input type="radio"> You listening ❤️</label>
+  <label><input type="radio"> You fixing everything 😌</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q9 Playful -->
+<div class="question">
+  <p>My biggest weakness is…</p>
+  <label><input type="radio"> Overthinking 🧠</label>
+  <label><input type="radio"> Loving too deeply ❤️</label>
+  <label><input type="radio"> Getting hangry 😄</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q10 Emotional -->
+<div class="question">
+  <p>No matter how angry we get, we always…</p>
+  <label><input type="radio"> Talk it out 💬</label>
+  <label><input type="radio"> Miss each other 🥹</label>
+  <label><input type="radio"> Choose us ❤️</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q11 Romantic -->
+<div class="question">
+  <p>In one word, our relationship is…</p>
+  <label><input type="radio"> Safe 🤍</label>
+  <label><input type="radio"> Strong 💪</label>
+  <label><input type="radio"> Forever ♾️</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- Q12 Do you know me -->
+<div class="question">
+  <p>What scares me the most?</p>
+  <label><input type="radio"> Losing you 💔</label>
+  <label><input type="radio"> Being misunderstood 😔</label>
+  <label><input type="radio"> Distance lasting forever ⏳</label>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- 💍 VALENTINE -->
+<div class="question">
+  <div class="valentine-box">
+    <p><strong>Will you be my Valentine? 💖</strong></p>
+    <button onclick="yes()">YES ❤️</button>
+    <button class="no" id="noBtn">NO 😜</button>
+  </div>
+</div>
+
+</div>
+
+<!-- 💌 LOVE LETTER -->
+<div class="screen" id="finalScreen">
+  <div class="love-letter">
+    <strong>My Love,</strong><br><br>
+
+    We get angry.<br>
+    We get irritated.<br>
+    We mess up.<br><br>
+
+    But we also grow, forgive,
+    and choose each other — every day.<br><br>
+
+    Distance has tested us,
+    but it has never weakened us.<br><br>
+
+    You are my home,
+    no matter how far you are ❤️<br><br>
+
+    Happy Valentine’s Day.<br>
+    Always yours,<br>
+    <strong>Choti Si Googles</strong>
+  </div>
+</div>
+
+</div>
+
+<script>
+let index = 0;
+const questions = document.querySelectorAll('.question');
+
+function startGame() {
+  document.getElementById('startScreen').classList.remove('active');
+  document.getElementById('gameScreen').classList.add('active');
+  questions[0].classList.add('active');
+}
+
+function next() {
+  const current = questions[index];
+  if (!current.querySelector('input[type="radio"]:checked')) {
+    alert("Choose one option 😊");
+    return;
+  }
+  current.classList.remove('active');
+  index++;
+  questions[index].classList.add('active');
+}
+
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.transform =
+    `translate(${Math.random()*200}px, ${Math.random()*60}px)`;
+});
+
+function yes() {
+  document.getElementById('gameScreen').classList.remove('active');
+  document.getElementById('finalScreen').classList.add('active');
+}
+</script>
+
+</body>
+</html>
